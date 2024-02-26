@@ -1,0 +1,59 @@
+## MAIN LAUNCHER ##
+
+from module import __atc__
+from module import keyword_finder
+from re import match
+from time import sleep
+from os import system
+
+
+def launcher(keys):
+    print(' ')
+    system('clear')
+    print('\033[1;37m- Running..')
+    print(' ')
+    url = keyword_finder(keys)
+    __atc__(url)
+    print(' ')
+    input('\033[1;37mback : ')
+    system('clear')
+    main('paul')
+
+def patern_url(quest):
+    patern = r'^https://eu.supreme.com/products/.*$'
+
+    if match(patern, quest):
+        launcher(quest)
+    else:
+        print ('invalid link format.')
+        
+def answer(num):
+    if num == '1':
+        q = input('Keyword : ')
+        #patern_url(q)
+        launcher(q)
+    else :
+        print("wrong")
+        sleep(1)
+        system('clear')
+        main('paul')
+
+def main(log):
+    print (f"""
+{'user log : '+ log}       
+_______________________
+.▄▄ · ▄• ▄▌ ▄▄▄·
+▐█ ▀. █▪██▌▐█ ▄█
+▄▀▀▀█▄█▌▐█▌ ██▀·
+▐█▄▪▐█▐█▄█▌▐█▪·•
+ ▀▀▀▀  ▀▀▀ .▀ 
+_______________________
+
+1 - ADD TO CART (Keyword)
+2 - ADD TO CART (URL)
+
+_______________________""")   
+    q = input('mode : ')
+    answer(q)
+
+main('paul')

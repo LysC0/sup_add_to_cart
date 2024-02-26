@@ -1,0 +1,41 @@
+
+{
+    "Product" : {
+        "Size" : "",
+        "Color" : "",
+        "keyword" : ""
+    },
+    
+    "Webhook" : {
+        "url" : ""
+    },
+
+    "Multi task" : {
+        "number" : ""
+    },
+
+    "proxies" : {
+        "ip:port" : "",
+        "usr:pwd" : ""
+    },
+
+    "Payment" : {
+
+        "name" : "",
+        "surname" : "",
+        "email" : "",
+        "address" : "",
+        "city" : "",
+        "zip" : "",
+        "phone" : "",
+
+        "Card" : {
+            "number" : "",
+            "month" : "",
+            "year" : "",
+            "ccv" : "",
+            "name" : ""
+        }
+    }
+}
+
