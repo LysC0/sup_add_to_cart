@@ -1,6 +1,7 @@
 ## keyword finder ##
 
-# EX pattern : Supreme®/Nike® Air Max Dn, Small Box Hooded Sweatshirt, Futura Sweater
+# EX title pattern : Supreme®/Nike® Air Max Dn, Small Box Hooded Sweatshirt, Futura Sweater
+# EX Size pattern : US7.5/UK6.5, US7.5/UK6.5
 
 from requests_html import HTMLSession
 import requests
@@ -23,12 +24,13 @@ header = {
     }    
 
 
+
 def keyword_finder(keyword):
+    r = HTMLSession()
     print('\033[1;33mFetch data..', end='\r')
     link_Stock = []
     title_stock = []
-    r = HTMLSession()
-
+    
     base = r.get('https://eu.supreme.com/collections/new')
     base.html.render()
     
@@ -97,3 +99,5 @@ def keyword_finder(keyword):
                      
 if __name__ == "__main__":
     pass
+
+#keyword_finder('cashmere')

@@ -5,6 +5,8 @@ from module import keyword_finder
 from re import match
 from time import sleep
 from os import system
+from time import time
+
 
 
 def launcher(keys):
@@ -12,8 +14,10 @@ def launcher(keys):
     system('clear')
     print('\033[1;37m- Running..')
     print(' ')
+    start = time()
     url = keyword_finder(keys)
     __atc__(url)
+    print(time() - start)
     print(' ')
     input('\033[1;37mback : ')
     system('clear')
@@ -23,7 +27,7 @@ def patern_url(quest):
     patern = r'^https://eu.supreme.com/products/.*$'
 
     if match(patern, quest):
-        launcher(quest)
+        __atc__(quest)
     else:
         print ('invalid link format.')
         
@@ -32,6 +36,9 @@ def answer(num):
         q = input('Keyword : ')
         #patern_url(q)
         launcher(q)
+    elif num == '2':
+        q = input('Product url : ')
+        patern_url(q)
     else :
         print("wrong")
         sleep(1)
